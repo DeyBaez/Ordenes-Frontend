@@ -1,0 +1,22 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edicion de articulo</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group my-3">
+            <label>Codigo: </label>
+            <input type="text" class="form-control" id="codigo" [(ngModel)]="product.codigo" name="codigo">
+        </div>
+        <div class="form-group my-3">
+            <label>Nombre: </label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="product.nombre" name="nombre">
+        </div>
+        <div class="form-group my-3">
+            <label>Precio unitario: </label>
+            <input type="text" class="form-control" id="precioUnitario" [(ngModel)]="product.precioUnitario" name="precioUnitario">
+        </div>
+        <div class="form-group my-3">
+            <label>Cantidad: </label>
+            <input type="text" class="form-control" id="stock" [(ngModel)]="product.stock" name="stock">
+        </div>
+        <button class="btn btn-success">Guardar</button>
+    </form>
+</div>

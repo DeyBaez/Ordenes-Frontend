@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-between">
+    <h2>Lista clientes</h2>
+    <button class="btn btn-primary" (click)="newClient()" >Nuevo cliente</button>
+</div>
+<table class="table table-striped mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>IDENTIFICACION</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td>{{client.identificacion}}</td>
+            <td>{{client.nombre}}</td>
+            <td>{{client.apellido}}</td>
+        </tr>
+    </tbody>
+</table>

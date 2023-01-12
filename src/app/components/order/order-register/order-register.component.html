@@ -1,0 +1,56 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de orden</h3>
+    <form >
+        <div class="form-group my-3">
+            <label>Fecha: </label>
+            <input type="date" class="form-control" id="fecha" [(ngModel)]="order.fecha" name="order">
+        </div>
+        <div class="form-group my-3">
+            <label>Cliente: </label>
+            <select class="form-select" id="cliente"  [ngModel]="client" (ngModelChange)="setClient($event)" name="cliente">
+                <option *ngFor="let client of clients"  [ngValue]="client" >{{client.nombre}} {{client.apellido}}</option>
+            </select>
+        </div>
+        <div class="form-group my-3">
+            <label>Articulo: </label>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="">
+                    <label >Cantidad</label>
+                    <input type="number" style="width: 100px;" class="form-control me-2" id="cantidad" [(ngModel)]="cantidad" name="cantidad">
+                </div>
+                <div class="">
+                    <label>Articulo</label>
+                    <select class="form-select me-2" style="width: 450px;" [ngModel]="product" (ngModelChange)="setProduct($event)" id="articulo" name="articulo">
+                        <option *ngFor="let product of products" [ngValue]="product" >{{product.nombre}}</option>
+                    </select>
+                </div>
+                <div class="">
+                    <button class="btn btn-success" (click)="addDetail()">Agregar</button>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="">
+            <table class="table table-striped mt-4">
+                <thead class="table-dark">
+                    <tr>
+                        <th>CANTIDAD</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO UNITARIO</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td>{{order.cantidad}}</td>
+                        <td>{{order.nombre}}</td>
+                        <td>{{order.precioUnitario}}</td>
+                        <td>{{order.total}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-success" (click)="onSubmit()">Guardar</button>
+    </form>
+</div>

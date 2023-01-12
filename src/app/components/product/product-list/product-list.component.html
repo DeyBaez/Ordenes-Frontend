@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between">
+    <h2>Lista articulos</h2>
+    <button class="btn btn-primary" (click)="newProduct()" >Nuevo articulo</button>
+</div>
+<table class="table table-striped mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>PRECIO UNITARIO</th>
+            <th>CANTIDAD</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.codigo}}</td>
+            <td>{{product.nombre}}</td>
+            <td>{{product.precioUnitario}}</td>
+            <td>{{product.stock}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="editProduct(product.id)" >Editar</button>
+                <button class="btn btn-danger ms-2" (click)="deleteProduct(product.id)" >Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

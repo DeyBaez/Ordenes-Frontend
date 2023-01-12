@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-between">
+    <h2>Lista ordenes</h2>
+    <button class="btn btn-primary" (click)="newOrder()" >Nueva orden</button>
+</div>
+<table class="table table-striped mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>FECHA</th>
+            <th>CLIENTE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order.id}}</td>
+            <td>{{order.fecha}}</td>
+            <td>{{order.nombreCliente}}</td>
+        </tr>
+    </tbody>
+</table>

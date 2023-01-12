@@ -1,0 +1,18 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registro de cliente</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group my-3">
+            <label>Identificacion: </label>
+            <input type="text" class="form-control" id="identificacion" [(ngModel)]="client.identificacion" name="identificacion">
+        </div>
+        <div class="form-group my-3">
+            <label>Nombre: </label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="client.nombre" name="nombre">
+        </div>
+        <div class="form-group my-3">
+            <label>Apellido: </label>
+            <input type="text" class="form-control" id="apellido" [(ngModel)]="client.apellido" name="apellido">
+        </div>
+        <button class="btn btn-success">Guardar</button>
+    </form>
+</div>
