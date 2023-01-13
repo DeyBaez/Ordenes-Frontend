@@ -22,6 +22,7 @@ export class OrderRegisterComponent implements OnInit {
   cantidad: number
   product: Articulo = new Articulo()
   client: Cliente = new Cliente()
+  errorStock = false
 
   constructor(
     private clientService: ClientService,
@@ -78,7 +79,10 @@ export class OrderRegisterComponent implements OnInit {
     this.orderService.registerOrder(this.order).subscribe(response => {
       console.log(response)
       this.getOrderList()
-    },error => console.log(error))
+    }, error => {
+      this.errorStock = true
+      console.log("error-- " + JSON.stringify(error))
+    })
   }
 
   onSubmit(){

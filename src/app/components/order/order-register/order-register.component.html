@@ -52,5 +52,8 @@
             </table>
         </div>
         <button class="btn btn-success" (click)="onSubmit()">Guardar</button>
+        <div class="alert alert-danger" *ngIf="errorStock">
+            No existen stock disponible 
+        </div>
     </form>
 </div>
