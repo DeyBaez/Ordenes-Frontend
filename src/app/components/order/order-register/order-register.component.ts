@@ -74,6 +74,7 @@ export class OrderRegisterComponent implements OnInit {
   registerOrder(){
     
     this.order.nombreCliente = this.client.nombre + ' ' + this.client.apellido
+    this.order.cliente = this.client
     this.order.ordenDetalles = this.orders
     console.log(this.order)
     this.orderService.registerOrder(this.order).subscribe(response => {

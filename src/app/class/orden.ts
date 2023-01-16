@@ -6,4 +6,5 @@ export class Orden {
     fecha: Date;
     nombreCliente: string;
     ordenDetalles:OrdenDetalle[]=[]
+    cliente: Cliente;
 }
